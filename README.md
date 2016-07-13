@@ -12,3 +12,5 @@
 
 ## Adding new data to OCR
 * File-naming convention: `<digit>_<number>.png`
+  * <number> must be consecutive
+* After you have finished adding data to OCR, run `process.py`. Then, it will update _data.txt_
