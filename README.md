@@ -11,7 +11,7 @@
 1. Run *nn.py* with Python27
 
 ## Adding new data to OCR
-* File-naming convention: *<digit>_<number>.png*
+* File-naming convention: *&lt;digit&gt;_&lt;number&gt;.png*
   * &lt;number&gt; must be consecutive
 * After you have finished adding data to OCR, run `process.py`. Then, it will update _data.txt_
 
