@@ -1,7 +1,7 @@
 ## Requirements
 - Numpy
 - Scipy
-- PILLOW
+- Pillow
 
 ## Image Compression
 1. Run *imagecompression.py* with Python27
