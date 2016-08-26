@@ -2,6 +2,7 @@
 - Numpy
 - Scipy
 - Pillow
+- Matplotlib
 
 ## Image Compression
 1. Run *imagecompression.py* with Python27
