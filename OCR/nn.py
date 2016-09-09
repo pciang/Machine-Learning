@@ -1,7 +1,6 @@
 import numpy as np
 from scipy import optimize
 import time
-import memory_profiler
 import gc
 from PIL import Image
 
@@ -64,7 +63,7 @@ def backprop(X, y):
     a2_nobias = sigmoid(z2)
     a2 = np.insert(a2_nobias, 0, 1, axis = 1)
     z3 = np.dot(a2, W2)
-    a3 = sigmoid(z3)    
+    a3 = sigmoid(z3)
 
     delta3 = a3 - y
 
