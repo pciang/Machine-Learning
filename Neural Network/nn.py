@@ -118,6 +118,7 @@ def backprop(X, y, max_iter=200, Alpha=0.03, detailed=False, tol=1e-6):
 
         previous_cost = current_cost
 
+    print 'Backprop failed to converge: %.9f' % current_cost
     return w1, w2
 
 W1, W2 = backprop(X_wbias, y, max_iter=10000, Alpha=1., detailed=False, tol=1e-9)
