@@ -9,7 +9,7 @@ input_size = 2
 bias_coeff = 1.
 
 # Variable
-hidden_size = 5
+hidden_size = 3
 output_size = 2
 
 def generate(n_sample=10):
@@ -125,7 +125,7 @@ def backprop(X, y, max_iter=200, Alpha=0.03, detailed=False, tol=1e-6):
     
     return w1, w2
 
-W1, W2 = backprop(X_wbias, y, max_iter=25000, Alpha=1., detailed=False, tol=1e-8)
+W1, W2 = backprop(X_wbias, y, max_iter=25000, Alpha=.85, detailed=False, tol=1e-9)
 
 dx = .01
 dy = .01
