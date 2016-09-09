@@ -9,7 +9,7 @@ input_size = 2
 bias_coeff = 1.
 
 # Variable
-hidden_size = 4
+hidden_size = 5
 output_size = 2
 
 def generate(n_sample=10):
@@ -87,7 +87,8 @@ def backprop(X, y, max_iter=200, Alpha=0.03, detailed=False, tol=1e-6):
     w1, w2 = W1.copy(), W2.copy()
     
     previous_cost = cost_function(X, y, params=(w1,w2))
-    
+
+    converge = False
     for it in range(max_iter):
         z2, a2_nobias, a2, z3, y_hat = forward(X, params=(w1,w2), itdout=True)
 
@@ -113,15 +114,18 @@ def backprop(X, y, max_iter=200, Alpha=0.03, detailed=False, tol=1e-6):
         if improvement < tol:
             print 'Backprop stopped at iteration-%d: %.9f' % (it, current_cost)
 
-            # Further improvement is too miniscule
+            # Further improvement is miniscule
+            converge = True
             break
 
         previous_cost = current_cost
 
-    print 'Backprop failed to converge: %.9f' % current_cost
+    if not converge:
+        print 'Backprop failed to converge: %.9f' % current_cost
+    
     return w1, w2
 
-W1, W2 = backprop(X_wbias, y, max_iter=10000, Alpha=1., detailed=False, tol=1e-9)
+W1, W2 = backprop(X_wbias, y, max_iter=5, Alpha=1., detailed=False, tol=1e-8)
 
 dx = .01
 dy = .01
