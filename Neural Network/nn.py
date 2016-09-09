@@ -21,7 +21,7 @@ def generate(n_sample=10):
             # Classification
             kelas = 1
 
-            radius = .33
+            radius = .35
             if (coord_x - .5)**2 + (coord_y - .5)**2 >= radius * radius:
                 kelas = 2
 
@@ -41,8 +41,8 @@ y = np.zeros((n_sample, output_size, ))
 for i in range(1, output_size + 1):
     y[:, i - 1] = dataset[:, -1] == i
 
-W1 = np.random.uniform(-.5, .5, size=(input_size+1,hidden_size))
-W2 = np.random.uniform(-.5, .5, size=(hidden_size+1,output_size))
+W1 = np.random.uniform(-.1, .1, size=(input_size+1,hidden_size))
+W2 = np.random.uniform(-.1, .1, size=(hidden_size+1,output_size))
 
 def sigmoid(u):
     return 1. / (1. + np.exp(-u))
@@ -125,7 +125,7 @@ def backprop(X, y, max_iter=200, Alpha=0.03, detailed=False, tol=1e-6):
     
     return w1, w2
 
-W1, W2 = backprop(X_wbias, y, max_iter=25000, Alpha=.85, detailed=False, tol=1e-9)
+W1, W2 = backprop(X_wbias, y, max_iter=50000, Alpha=1., detailed=False, tol=1e-9)
 
 dx = .01
 dy = .01
