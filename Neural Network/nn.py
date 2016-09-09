@@ -125,7 +125,7 @@ def backprop(X, y, max_iter=200, Alpha=0.03, detailed=False, tol=1e-6):
     
     return w1, w2
 
-W1, W2 = backprop(X_wbias, y, max_iter=1000000, Alpha=1., detailed=False, tol=1e-9)
+W1, W2 = backprop(X_wbias, y, max_iter=25000, Alpha=1., detailed=False, tol=1e-8)
 
 dx = .01
 dy = .01
