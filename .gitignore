@@ -1,1 +1,5 @@
-OCR/Matlab/
+OCR/*
+*.csv
+Image Compression/*
+Neural Network/*
+Perceptron/*
